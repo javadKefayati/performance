@@ -1,5 +1,5 @@
-# performance
-project for the test go and nodejs performance
+# performance project
+Project for the test go and nodejs performance
 
 two backends give requests from the client and Respond to the client
 
@@ -21,9 +21,9 @@ check performance in two languages(go - node js)
 
 ## run peroject
 
-install docker and docker-compose and write into the terminal in  the project directory
+Install docker and docker-compose and write into the terminal in  the project directory
 
 ```bash
 docker-compose up -d
 ```
-so enter in browser localhost:1010/
+so enter in browser [localhost:1010](http://localhost:1010/)
