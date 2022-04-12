@@ -1,11 +1,11 @@
 # performance
-project for test go and nodejs performance
+project for the test go and nodejs performance
 
-two backends give requests from client and Responds to the client
+two backends give requests from the client and Respond to the client
 
-check performance two languages(go - node js) 
+check performance in two languages(go - node js) 
 
-[tools:]
+# tools:
 
 -docker 
 
@@ -21,7 +21,7 @@ check performance two languages(go - node js)
 
 ## run peroject
 
-install docker and docker-compose and write into the terminal in project directory
+install docker and docker-compose and write into the terminal in  the project directory
 
 ```bash
 docker-compose up -d
