@@ -26,4 +26,4 @@ install docker and docker-compose and write into the terminal in  the project di
 ```bash
 docker-compose up -d
 ```
-so enter in browser loculhost:1010/
+so enter in browser localhost:1010/
