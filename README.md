@@ -7,17 +7,17 @@ check performance in two languages(go - node js)
 
 # tools:
 
--docker 
+- docker 
 
--go
+- go
 
--node
+- node
 
--html js css for front
+- html js css for front
 
--nginx
+- nginx
 
--locust
+- locust
 
 ## run peroject
 
@@ -26,3 +26,4 @@ install docker and docker-compose and write into the terminal in  the project di
 ```bash
 docker-compose up -d
 ```
+so enter in browser loculhost:1010/
