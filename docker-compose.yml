@@ -1,0 +1,56 @@
+version: "3.8"
+services:
+  nginx:
+    # build: ./
+    image : "mynginx"
+    working_dir: /usr/share/nginx/html/
+    ports:
+      - 1010:80
+    
+    volumes:
+      - ./front:/usr/share/nginx/html/
+      - ./nginx_conf:/etc/nginx/conf.d
+      - ./go_proj:/usr/src/myapp 
+      -  ./node_proj/:/home/node/app
+    depends_on:
+      - "go"
+      - "node"
+    links:
+      - node
+      - redis
+      - go
+
+  node:
+    image: "node:alpine"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node_proj/:/home/node/app
+    ports:
+      - 3000:3000
+    command: "node index.js"
+    links:
+      - "redis"
+
+  go:
+    image: "golang:latest" 
+    
+    working_dir: /usr/src/myapp 
+    volumes:
+      - ./go_proj:/usr/src/myapp 
+    ports:
+      - 4000:8080
+    command: "go run main.go"
+    environment:
+      - GIN_MODE=release
+    links :
+    - "redis"
+
+  redis:  
+    image: "redis:alpine"
+    ports:
+      - 4040:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
